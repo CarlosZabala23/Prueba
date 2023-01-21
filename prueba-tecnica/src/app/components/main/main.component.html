@@ -1,0 +1,30 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <span class="navbar-brand">ColNews</span>
+      <button class="btn btn-outline-danger" (click)="singOut()">Cerrar sesion</button>
+    </div>
+</nav>
+
+<div class="container text-center">
+  <div class="cardi">
+    <div class="card mb-3">
+    <div class="card-body">
+      <img src="../../../assets/img/clima.png" class="clima">
+    <p class="card-text">Cali,co</p>
+    <p class="card-text">{{weather.main.temp}}°C</p>
+  </div>
+  </div>
+  </div>
+    <div class="row">
+      <div class="col" *ngFor="let article of articles; let i = index">    
+            <div class="card mb-3" style="width: 20rem;">
+                <img src="{{article.urlToImage}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{article.title}}</h5>
+                  <p class="card-text">{{article.description}}</p>
+                  <p class="card-text text-end"><small class="text-muted">{{i+1}}. {{article.source.name}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
